@@ -1,0 +1,99 @@
+.Container_Navbar{
+    border: 1px solid;
+    display: flex;
+    height: calc(3.5rem - 2px);
+    background-color: rgb(0, 0, 0);
+    justify-content: space-between;
+}
+.Burger_Logo_Navbar{
+    display: flex;
+    height: 3.3rem;
+}
+.burger{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: space-evenly;
+    margin: 0.2rem;
+    padding: 0.5rem;
+    border: 1 px solid transparent;
+    margin-left: 0.5rem;
+    margin-right: 0.7rem;
+    border-radius: 100%;
+}
+.burger p{
+    margin: 0.5px;
+    width: 1.2rem;
+    height: 0.1rem;
+    background-color: rgb(255, 244, 244);
+}
+.logo_div_Navbar{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    gap: 8px;
+}
+.logo_title_navbar{
+    margin: auto;
+    color: white;
+    font-weight: bold;
+}
+.apps_Box{
+    width: 25px;
+    margin: auto 0.7rem;
+    height: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.appBox{
+    border: 1px solid white;
+    margin: 0.1rem;
+    width: 2px;
+    height: 2px;
+}
+.Auth_cont_Navbar{
+    width:auto;
+    margin: auto auto;
+    position: relative;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    margin:0 0.8rem 0 0.3rem;
+
+    }
+.Auth_Btn{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    color: #3ea6ff;
+    /* background-color: rgb(36,36,36); */
+    border: 1px solid rgba(255, 255, 255, 0.201);
+    border-radius: 18px;
+    padding: 0 4px;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 36px;
+    width: 6rem;
+    margin: auto;
+    font-size: 14px;
+    line-height: 36px;
+}
+
+.auth_text{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 0rem 0.2rem;
+    /* align-items: center; */
+    /* justify-items: center; */
+    margin:0.3rem ;
+    /* width: 2rem; */
+}
+
+@media screen and (max-width: 850px) {
+    .logo_title_navbar {
+      display: none;
+    }
+  }
+    
