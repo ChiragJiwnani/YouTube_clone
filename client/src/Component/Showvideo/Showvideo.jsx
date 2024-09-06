@@ -7,7 +7,7 @@ const Showvideo = ({vid}) => {
   return (
         <>
       <Link to={`/videopage/${vid._id}`}>
-        <video src={`https://youtube-clone-dzra.onrender/${vid.filepath}`} className='video_ShowVideo'/>
+        <video src={`https://youtube-clone-3ge8.onrender/${vid.filepath}`} className='video_ShowVideo'/>
     </Link>
     <div className="video_description">
         <div className="Chanel_logo_App">
