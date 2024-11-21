@@ -117,7 +117,7 @@ const Navbar = ({ toggledrawer, seteditcreatechanelbtn }) => {
             <p></p>
             <p></p>
           </div>
-          <Link to={"/home"} className="logo_div_Navbar">
+          <Link to={"/"} className="logo_div_Navbar">
             <img height={32} src={logo} alt="" />
             <p className="logo_title_navbar">
               {" "}
