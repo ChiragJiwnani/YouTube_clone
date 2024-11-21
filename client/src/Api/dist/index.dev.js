@@ -10,7 +10,7 @@ var _axios = _interopRequireDefault(require("axios"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var API = _axios["default"].create({
-  baseURL: "http://localhost:5000"
+  baseURL: "https://youtube-clone-3ge8.onrender.com"
 });
 
 API.interceptors.request.use(function (req) {

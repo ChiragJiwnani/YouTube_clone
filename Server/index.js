@@ -120,7 +120,7 @@ io.on("connection", (socket) => {
 // Proxy translation request to OpenNMT server
 app.post("/translate", async (req, res) => {
   const { src, tgt } = req.body;
-  const command = `curl -X POST http://localhost:5000/translate -H "Content-Type: application/json" -d '{"src": "${src}", "tgt": "${tgt}"}'`;
+  const command = `curl -X POST https://youtube-clone-3ge8.onrender.com/translate -H "Content-Type: application/json" -d '{"src": "${src}", "tgt": "${tgt}"}'`;
 
   exec(command, (error, stdout) => {
     if (error) {

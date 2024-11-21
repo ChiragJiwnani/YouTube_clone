@@ -151,7 +151,6 @@ const Videopage = () => {
         } else {
           video.playbackRate = 0.5; // Left side hold
         }
-<<<<<<< HEAD
       }, 500); // Adjust delay as needed
     }
   };
@@ -311,8 +310,8 @@ const Videopage = () => {
           >
             <video
               ref={videoRef}
-              src={`http://localhost:5000/${vv?.filepath}`}
-              //   src={`https://youtube-clone-3ge8.onrender.com/${vv?.filepath}`}
+              // src={`http://localhost:5000/${vv?.filepath}`}
+                src={`https://youtube-clone-3ge8.onrender.com/${vv?.filepath}`}
               className="video_ShowVideo_videoPage"
               controls
               onDoubleClick={handleDoubleClick}
@@ -336,42 +335,6 @@ const Videopage = () => {
                     {moment(vv?.createdat).fromNow()}
                   </div>
                   <Likewatchlatersavebtns vv={vv} vid={vid} />
-=======
-        handleviews()
-    },[])
-    return (
-        <>
-            <div className="container_videoPage">
-                <div className="container2_videoPage">
-                    <div className="video_display_screen_videoPage">
-                        <video src={`https://youtube-clone-3ge8.onrender.com/${vv?.filepath}`} className="video_ShowVideo_videoPage" controls></video>
-                        <div className="video_details_videoPage">
-                            <div className="video_btns_title_VideoPage_cont">
-                                <p className="video_title_VideoPage">{vv?.title}</p>
-                                <div className="views_date_btns_VideoPage">
-                                    <div className="views_videoPage">
-                                        {vv?.views} views <div className="dot"></div>{" "}
-                                        {moment(vv?.createdat).fromNow()}
-                                    </div>
-                                    <Likewatchlatersavebtns vv={vv} vid={vid} />
-                                </div>
-                            </div>
-                            <Link to={'/'} className='chanel_details_videoPage'>
-                                <b className="chanel_logo_videoPage">
-                                    <p>{vv?.uploader.charAt(0).toUpperCase()}</p>
-                                </b>
-                                <p className="chanel_name_videoPage">{vv.uploader}</p>
-                            </Link>
-                            <div className="comments_VideoPage">
-                                <h2>
-                                    <u>Comments</u>
-                                </h2>
-                                <Comment videoid={vv._id}/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="moreVideoBar">More videos</div>
->>>>>>> 6003e6fb123647b562ce835c0c93b5a33481f068
                 </div>
               </div>
               <Link

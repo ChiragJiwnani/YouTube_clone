@@ -19,10 +19,10 @@ const LoginPage = () => {
     try {
       if (loginMethod === "email") {
         // Trigger email OTP verification
-        await axios.post("http://localhost:5000/api/send-email-otp", { email });
+        await axios.post("https://youtube-clone-3ge8.onrender.com/api/send-email-otp", { email });
       } else {
         // Trigger mobile OTP verification
-        await axios.post("http://localhost:5000/api/send-mobile-otp", { mobileNumber });
+        await axios.post("https://youtube-clone-3ge8.onrender.com/api/send-mobile-otp", { mobileNumber });
       }
       setLoading(false);
       // Redirect to home or dashboard after successful OTP request

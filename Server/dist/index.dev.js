@@ -172,7 +172,7 @@ app.post("/translate", function _callee2(req, res) {
       switch (_context2.prev = _context2.next) {
         case 0:
           _req$body = req.body, src = _req$body.src, tgt = _req$body.tgt;
-          command = "curl -X POST http://localhost:5000/translate -H \"Content-Type: application/json\" -d '{\"src\": \"".concat(src, "\", \"tgt\": \"").concat(tgt, "\"}'");
+          command = "curl -X POST https://youtube-clone-3ge8.onrender.com/translate -H \"Content-Type: application/json\" -d '{\"src\": \"".concat(src, "\", \"tgt\": \"").concat(tgt, "\"}'");
           (0, _child_process.exec)(command, function (error, stdout) {
             if (error) {
               res.status(500).json({
