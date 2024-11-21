@@ -5,7 +5,7 @@ import io from "socket.io-client";
 import CryptoJS from "crypto-js";
 import "./chat.css";
 
-const socket = io("https://youtube-clone-3ge8.onrender.com");
+const socket = io("https://youtube-clone-3ge8.onrender.com/");
 
 const Chat = ({ roomId, userId, userName }) => {
   const dispatch = useDispatch();
