@@ -14,6 +14,8 @@ import { getallcomment } from './action/comment';
 import { getallhistory } from './action/history';
 import { getalllikedvideo } from './action/likedvideo';
 import { getallwatchlater } from './action/watchlater';
+import LoginPage from './Pages/Loginpage/loginpage';
+
 function App() {
   const [toggledrawersidebar, settogledrawersidebar] = useState({
     display: "none"
@@ -56,6 +58,7 @@ function App() {
       <Navbar seteditcreatechanelbtn={seteditcreatechanelbtn} toggledrawer={toggledrawer} />
       <Drawersliderbar toggledraw={toggledrawer} toggledrawersidebar={toggledrawersidebar} />
       <Allroutes seteditcreatechanelbtn={seteditcreatechanelbtn} setvideouploadpage={setvideouploadpage} />
+      
     </Router>
   );
 }

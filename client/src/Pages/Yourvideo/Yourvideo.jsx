@@ -59,7 +59,7 @@ const Yourvideo = () => {
                     currentuser ?(<>
                     <Showvideogrid vid={yourvideolist}/>
                     </>):<>
-                    <h3>PLZ Login to see Your upload video list</h3>
+                    <h3>Please login to see Your upload video list</h3>
                     </>
                 }
             </div>

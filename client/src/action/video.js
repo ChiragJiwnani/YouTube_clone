@@ -1,4 +1,5 @@
 import * as api from "../Api";
+import { updateUser } from "./currentuser";
 
 export const uploadvideo = (videodata) => async (dispatch) => {
     try {
@@ -44,3 +45,16 @@ export const viewvideo=(viewdata)=>async(dispatch)=>{
         console.log(error)
     }
 }
+
+export const addPoints=(ViewDate)=>async(dispatch)=>{
+    try {
+      const { id, viewer } = ViewDate;
+      console.log("videoid->",id,"viewer->", viewer)
+      const {data} = await api.addPoints(id, viewer)
+      dispatch(updateUser(data))
+      console.log('User Updated',data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  

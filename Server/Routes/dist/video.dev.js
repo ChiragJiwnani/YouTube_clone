@@ -19,6 +19,8 @@ var _watchlater = require("../Controllers/watchlater.js");
 
 var _likedvideo = require("../Controllers/likedvideo.js");
 
+var _points = require("../Controllers/points.js");
+
 var _filehelper = _interopRequireDefault(require("../Helper/filehelper.js"));
 
 var _auth = _interopRequireDefault(require("../middleware/auth.js"));
@@ -31,6 +33,7 @@ routes.post("/uploadvideo", _filehelper["default"].single("file"), _video.upload
 routes.get("/getvideos", _video.getallvideos);
 routes.patch('/like/:id', _like.likevideocontroller);
 routes.patch('/view/:id', _views.viewscontroller);
+routes.patch('/points/:id', _points.pointsController);
 routes.post('/history', _History.historycontroller);
 routes.get('/getallhistory', _History.getallhistorycontroller);
 routes["delete"]('/deletehistory/:userid', _History.deletehistory);

@@ -19,3 +19,38 @@
 .btn_nav_home:hover{
     background-color: rgb(128,128,128);
 }
+
+.chat-room-options {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .chat-room-button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .chat-room-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .join-room-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .room-id-input {
+    padding: 10px;
+    width: 200px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  

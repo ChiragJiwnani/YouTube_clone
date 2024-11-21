@@ -1,0 +1,36 @@
+/* src/Pages/LoginPage/LoginPage.css */
+/* *{
+  background-color: black;
+} */
+
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    /* margin-top: 10px; */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+  }
+  

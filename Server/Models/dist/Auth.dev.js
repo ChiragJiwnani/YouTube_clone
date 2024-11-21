@@ -17,12 +17,27 @@ var userSchema = _mongoose["default"].Schema({
   name: {
     type: String
   },
+  mobileNumber: {
+    type: String,
+    unique: true,
+    required: false
+  },
   desc: {
     type: String
   },
   joinedOn: {
     type: Date,
     "default": Date.now
+  },
+  viewedVideos: {
+    type: [_mongoose["default"].Schema.Types.ObjectId],
+    ref: "videoFiles",
+    "default": []
+  },
+  // List of video IDs
+  points: {
+    type: Number,
+    "default": 0
   }
 });
 

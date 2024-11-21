@@ -19,6 +19,10 @@ router.post("/post", _Comment.postcomment);
 router.get('/get', _Comment.getcomment);
 router["delete"]('/delete/:id', _Comment.deletecomment);
 router.patch('/edit/:id', _Comment.editcomment);
+router.patch('/like/:id', _Comment.likeComment); // Correct like route
+
+router.patch('/dislike/:id', _Comment.dislikeComment); // Correct dislike route
+
 var _default = router;
 exports["default"] = _default;
 //# sourceMappingURL=comment.dev.js.map

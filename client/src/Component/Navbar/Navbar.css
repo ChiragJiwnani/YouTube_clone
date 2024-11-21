@@ -91,6 +91,25 @@
     /* width: 2rem; */
 }
 
+.Video_Btn{
+    margin:auto;
+}
+
+.loginotp{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 4px 16px;
+    
+    text-decoration: none;
+    font-weight: 700;
+    background-color: black;
+}
+
+.loginotp a {
+    text-decoration: none;
+    color: #007bff;
+}
+
 @media screen and (max-width: 850px) {
     .logo_title_navbar {
       display: none;

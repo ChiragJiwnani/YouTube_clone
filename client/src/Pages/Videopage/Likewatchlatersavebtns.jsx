@@ -14,7 +14,7 @@ const Likewatchlatersavebtns = ({vv,vid}) => {
   const [savevideo,setsavevideo]=useState(false)
   const [dislikebtn,setdislikebtn]=useState(false)
   const [likebtn,setlikebtn]=useState(false)
-  const currentuser=useSelector(state => state.currentuserreducer);
+  const currentuser=useSelector(state => state?.currentuserreducer);
   const likedvideolist=useSelector((state)=>state.likedvideoreducer)
   const watchlaterlist=useSelector((s)=>s.watchlaterreducer)
   useEffect(()=>{
@@ -27,7 +27,8 @@ const Likewatchlatersavebtns = ({vv,vid}) => {
     )
     .map((m)=>setsavevideo(true));
   },[]);
-const togglesavedvideo=()=>{
+
+  const togglesavedvideo=()=>{
   if(currentuser){
       if(savevideo){
         setsavevideo(false);

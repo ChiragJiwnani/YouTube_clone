@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import logo from "./logo.png";
 import "./Navbar.css";
+import Searchbar from "./Searchbar/Searchbar";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, generatePath } from "react-router-dom";
 import { RiVideoAddLine } from "react-icons/ri";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BiUserCircle } from "react-icons/bi";
-import Searchbar from "./Searchbar/Searchbar";
 import Auth from "../../Pages/Auth/Auth";
 import axios from "axios";
 import { login } from "../../action/auth";
@@ -68,6 +68,7 @@ const Navbar = ({ toggledrawer, seteditcreatechanelbtn }) => {
     googleLogout();
     localStorage.clear();
   };
+
   useEffect(() => {
     const token = currentuser?.token;
     if (token) {
@@ -78,6 +79,35 @@ const Navbar = ({ toggledrawer, seteditcreatechanelbtn }) => {
     }
     dispatch(setcurrentuser(JSON.parse(localStorage.getItem("Profile"))));
   }, [currentuser?.token, dispatch]);
+
+  useEffect(() => {
+    const videoCallBtn = document.getElementById("videoCallBtn");
+
+    const checkTimeAndDisable = () => {
+      const now = new Date();
+      const currentHour = now.getHours();
+
+      // Disable button and set notification if time is outside 6 PM to 12 AM
+      if (currentHour <= 17) {
+        videoCallBtn.removeAttribute("href");
+        videoCallBtn.onclick = (e) => {
+          e.preventDefault();
+          alert("Video calls are only available from 6 PM to 12 AM");
+        };
+      } else {
+        videoCallBtn.setAttribute("href", "/videocall");
+        videoCallBtn.onclick = null; // Remove onclick if time is within range
+      }
+    };
+
+    checkTimeAndDisable();
+
+    // Optionally, you can set an interval to keep checking the time every minute
+    const interval = setInterval(checkTimeAndDisable, 60000);
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, []);
+
   return (
     <>
       <div className="Container_Navbar">
@@ -87,13 +117,19 @@ const Navbar = ({ toggledrawer, seteditcreatechanelbtn }) => {
             <p></p>
             <p></p>
           </div>
-          <Link to={"/"} className="logo_div_Navbar">
-            <img height={32}  src={logo} alt="" />
-            <p className="logo_title_navbar"> YouTube <sup>clone</sup> </p>
+          <Link to={"/home"} className="logo_div_Navbar">
+            <img height={32} src={logo} alt="" />
+            <p className="logo_title_navbar">
+              {" "}
+              YouTube <sup>clone</sup>{" "}
+            </p>
           </Link>
         </div>
         <Searchbar />
-        <RiVideoAddLine size={22} className={"vid_bell_Navbar"} />
+        <a id="videoCallBtn" className="Video_Btn">
+          <RiVideoAddLine size={22} className={"vid_bell_Navbar"} />
+        </a>
+
         <div className="apps_Box">
           <p className="appBox"></p>
           <p className="appBox"></p>
@@ -105,6 +141,8 @@ const Navbar = ({ toggledrawer, seteditcreatechanelbtn }) => {
           <p className="appBox"></p>
           <p className="appBox"></p>
         </div>
+
+       
 
         <IoMdNotificationsOutline size={22} className={"vid_bell_Navbar"} />
         <div className="Auth_cont_Navbar">
@@ -132,14 +170,20 @@ const Navbar = ({ toggledrawer, seteditcreatechanelbtn }) => {
           )}
         </div>
       </div>
+       <div className="loginotp">
+      <Link to="/">Login</Link> {/* Link to the login page */}
+      {/* Other navbar content */}
+    </div>
       {authbtn && (
         <Auth
           seteditcreatechanelbtn={seteditcreatechanelbtn}
           setauthbtn={setauthbtn}
           user={currentuser}
         />
+        
       )}
     </>
+    
   );
 };
 

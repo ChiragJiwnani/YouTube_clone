@@ -53,6 +53,7 @@ const Search = () => {
     <div className="container_Pages_App">
       <Leftsidebar/>
       <div className="container2_Pages_App">
+      <h2 style={{color:"white"}}>Search Results for {searchquery}...</h2>
         <Showvideogrid vid={vids}/>
       </div>
     </div>

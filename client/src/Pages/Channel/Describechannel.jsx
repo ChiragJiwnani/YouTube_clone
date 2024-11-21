@@ -28,6 +28,7 @@ const currentuser=useSelector(state => state.currentuserreducer);
       </div>
       {currentuser?.result._id === currentchannel?._id &&(
         <>
+        
         <p className="editbtn_chanel" onClick={()=>seteditcreatechanelbtn(true)}>
           <FaEdit/>
           <b>Edit Channel</b>
