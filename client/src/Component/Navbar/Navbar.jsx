@@ -171,7 +171,7 @@ const Navbar = ({ toggledrawer, seteditcreatechanelbtn }) => {
         </div>
       </div>
        <div className="loginotp">
-      <Link to="/">Login</Link> {/* Link to the login page */}
+      <Link to="/login">Login</Link> {/* Link to the login page */}
       {/* Other navbar content */}
     </div>
       {authbtn && (

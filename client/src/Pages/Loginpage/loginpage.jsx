@@ -41,7 +41,7 @@ const LoginPage = () => {
         mobileNumber: loginMethod === "mobile" ? mobileNumber : null,
       });
       if (response.data.message === "Login successful") {
-        navigate("/home"); // Redirect to home after successful login
+        navigate("/"); // Redirect to home after successful login
       }
     } catch (error) {
       console.error("OTP verification failed:", error);
@@ -54,7 +54,7 @@ const LoginPage = () => {
     
     <div className="login-container">
       <div className="loginotp">
-      <Link to="/home">Home</Link> {/* Link to the login page */}
+      <Link to="/">Home</Link> {/* Link to the login page */}
       {/* Other navbar content */}
     </div>
       <h1>Login</h1>

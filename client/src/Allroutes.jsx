@@ -15,8 +15,8 @@ import LoginPage from "./Pages/Loginpage/loginpage";
 const Allroutes = ({ seteditcreatechanelbtn, setvideouploadpage }) => {
   return (
     <Routes>
-      <Route path="/" element={<LoginPage />} />
-      <Route path="/home" element={<Home />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/" element={<Home />} />
       <Route path="/search/:Searchquery" element={<Search />} />
       <Route path="/videopage/:vid" element={<Videopage />} />
       <Route path="/Library" element={<Library />} />
