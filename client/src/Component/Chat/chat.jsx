@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllMessages } from "../../action/chat.js";
+import { setcurrentuser } from "../../action/currentuser";
 import io from "socket.io-client";
 import CryptoJS from "crypto-js";
 import "./chat.css";
@@ -12,6 +13,8 @@ const Chat = ({ roomId, userId, userName }) => {
 
   // Get messages from Redux store
   const messages = useSelector((state) => state.chat?.messages || []);
+  const currentuser = useSelector((state) => state.currentuserreducer);
+  // console.log(currentuser?.result.name)
 
   const [message, setMessage] = useState("");
   const [localMessages, setLocalMessages] = useState([]); // To manage local state for messages
@@ -113,6 +116,9 @@ const Chat = ({ roomId, userId, userName }) => {
 
   return (
     <div className="chat-window">
+     <div className="chat-header">
+        <h4>Chat Room: {roomId}</h4> {/* Display the roomId */}
+      </div>
       <div className="chat-history">
         {localMessages && localMessages.length > 0 ? (
           localMessages.map((msg, index) => (
@@ -121,13 +127,13 @@ const Chat = ({ roomId, userId, userName }) => {
               className={msg.userId === userId ? "my-message" : "other-message"}
             >
               <strong>
-                {msg.userId === userId ? `${userName}` : `User ${msg.userId}`}:
+                {msg.userId === userId ? `${currentuser?.result.name}` : `User ${msg.userId}`}:
               </strong>{" "}
               {msg.decrypted || "[Error: Decryption failed]"}
             </div>
           ))
         ) : (
-          <p>No messages yet. Start the conversation!</p>
+          <p>Welcome, {currentuser?.result.name || "Guest"}</p>
         )}
       </div>
 
