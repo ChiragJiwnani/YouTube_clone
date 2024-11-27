@@ -1,0 +1,28 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "index.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/chat",
+        "dest": "/Routes/chat.js"
+      },
+      {
+        "src": "/comment",
+        "dest": "/Routes/comment.js"
+      },
+      {
+        "src": "/user",
+        "dest": "/Routes/User.js"
+      },
+      {
+        "src": "/video",
+        "dest": "/Routes/video.js"
+      }
+    ]
+  }
+  
