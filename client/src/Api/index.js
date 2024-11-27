@@ -1,5 +1,5 @@
 import axios from "axios"
-const API=axios.create({baseURL:`https://youtube-clone-3ge8.onrender.com`})
+const API=axios.create({baseURL:`https://youtubeclone-server.vercel.app`})
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("Profile")) {
