@@ -1,12 +1,8 @@
 import axios from "axios"
-<<<<<<< HEAD
 // const API=axios.create({baseURL:`https://youtube-clone-3ge8.onrender.com`})
 // const API=axios.create({baseURL:`http://localhost:5000`})
 const API=axios.create({baseURL:`https://youtubeclone-server.vercel.app`})
-=======
-const API=axios.create({baseURL:`https://youtubeclone-server.vercel.app`})
 //const API=axios.create({baseURL:`https://you-tube-clone-6hhgfjrnf-chiragjiwnanis-projects.vercel.app`})
->>>>>>> 36e2da87f10d0bbe1e5b52db7f85213a62989758
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("Profile")) {
