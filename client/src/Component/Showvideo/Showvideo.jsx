@@ -7,14 +7,9 @@ const Showvideo = ({vid}) => {
   return (
         <>
       <Link to={`/videopage/${vid._id}`}>
-<<<<<<< HEAD
         {/* <video src={`https://youtube-clone-3ge8.onrender.com/${vid.filepath}`} className='video_ShowVideo'/> */}
         <video src={`https://youtubeclone-server.vercel.app/${vid.filepath}`} className='video_ShowVideo'/>
         {/* <video src={`http://localhost:5000/${vid.filepath}`} className='video_ShowVideo'/> */}
-=======
-          { <video src={`https://youtubeclone-server.vercel.app/${vid.filepath}`} className='video_ShowVideo'/> }
-          {/*<video src={`https://you-tube-clone-6hhgfjrnf-chiragjiwnanis-projects.vercel.app/${vid.filepath}`} className='video_ShowVideo'/> */}
->>>>>>> 36e2da87f10d0bbe1e5b52db7f85213a62989758
     </Link>
     <div className="video_description">
         <div className="Chanel_logo_App">

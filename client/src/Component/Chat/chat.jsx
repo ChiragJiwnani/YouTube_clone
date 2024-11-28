@@ -6,15 +6,9 @@ import io from "socket.io-client";
 import CryptoJS from "crypto-js";
 import "./chat.css";
 
-<<<<<<< HEAD
 // const socket = io("https://youtube-clone-3ge8.onrender.com");
 const socket = io("https://youtubeclone-server.vercel.app");
 // const socket = io("http://localhost:5000");
-=======
-const socket = io("https://youtubeclone-server.vercel.app",{
-  transports: ["polling"]
-});
->>>>>>> 36e2da87f10d0bbe1e5b52db7f85213a62989758
 
 const Chat = ({ roomId, userId, userName }) => {
   const dispatch = useDispatch();
