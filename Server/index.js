@@ -57,8 +57,8 @@ const server = createServer(app);
 socketServer(server);
 
 app.use(cors());
-app.use(express.json({ limit: "30mb", extended: true }));
-app.use(express.urlencoded({ limit: "30mb", extended: true }));
+app.use(express.json({ limit: "100mb", extended: true }));
+app.use(express.urlencoded({ limit: "100mb", extended: true }));
 app.use("/uploads", express.static(path.join("uploads")));
 
 app.get("/", (req, res) => {
