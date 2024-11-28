@@ -38,8 +38,8 @@ const VideoCall = () => {
 
   useEffect(() => {
     // socket.current = io.connect("https://youtubeclone-server.vercel.app/");
-    // socket.current = io.connect("https://youtube-clone-3ge8.onrender.com/");
-    socket.current = io.connect("http://localhost:5000/");
+    socket.current = io.connect("https://youtube-clone-3ge8.onrender.com/");
+    // socket.current = io.connect("http://localhost:5000/");
     console.log("Use Effect running");
 
     navigator.mediaDevices

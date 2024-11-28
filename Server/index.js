@@ -78,8 +78,8 @@ const PORT = process.env.PORT;
 // Initialize Socket.io
 const io = new Server(httpServer, {
   cors: {
-    // origin: ["https://chirags-youtube-clone.netlify.app","http://localhost:3000", "https://chirags-youtube-clone.vercel.app"],// Your frontend's URL
-    origin: ["http://localhost:3000"],// Your frontend's URL
+    origin: ["https://chirags-youtube-clone.vercel.app"],// Your frontend's URL
+    // origin: ["http://localhost:3000"],// Your frontend's URL
     methods: ["POST", "GET", "PATCH"],
     credentials: true,
     optionSuccessStatus: 200, // Set up the correct CORS for frontend access
@@ -121,8 +121,8 @@ io.on("connection", (socket) => {
 // Proxy translation request to OpenNMT server
 app.post("/translate", async (req, res) => {
   const { src, tgt } = req.body;
-  const command = `curl -X POST http://localhost:5000/translate -H "Content-Type: application/json" -d '{"src": "${src}", "tgt": "${tgt}"}'`;
-  // const command = `curl -X POST https://youtubeclone-server.vercel.app/translate -H "Content-Type: application/json" -d '{"src": "${src}", "tgt": "${tgt}"}'`;
+  // const command = `curl -X POST http://localhost:5000/translate -H "Content-Type: application/json" -d '{"src": "${src}", "tgt": "${tgt}"}'`;
+  const command = `curl -X POST https://youtubeclone-server.vercel.app/translate -H "Content-Type: application/json" -d '{"src": "${src}", "tgt": "${tgt}"}'`;
 
   exec(command, (error, stdout) => {
     if (error) {
