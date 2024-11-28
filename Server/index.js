@@ -85,7 +85,7 @@ const io = new Server(httpServer, {
     credentials: true,
     optionSuccessStatus: 200, // Set up the correct CORS for frontend access
   },
-  transports: ["websocket", "polling"]
+  transports: [ "polling"]
 });
 
 // Socket.io chat logic
