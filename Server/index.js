@@ -78,7 +78,8 @@ const PORT = process.env.PORT;
 // Initialize Socket.io
 const io = new Server(httpServer, {
   cors: {
-    origin: ["https://chirags-youtube-clone.netlify.app","http://localhost:3000", "https://chirags-youtube-clone.vercel.app"],
+    //origin: ["http://localhost:3000", "https://chirags-youtube-clone.vercel.app"],
+    origin: "*",
     methods: ["POST", "GET", "PATCH"],
     credentials: false,
     optionSuccessStatus: 200, // Set up the correct CORS for frontend access
