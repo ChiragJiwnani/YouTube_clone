@@ -8,7 +8,7 @@ const Showvideo = ({vid}) => {
         <>
       <Link to={`/videopage/${vid._id}`}>
           {/* <video src={`https://youtubeclone-server.vercel.app/${vid.filepath}`} className='video_ShowVideo'/> */}
-        <video src={`you-tube-clone-6hhgfjrnf-chiragjiwnanis-projects.vercel.app/${vid.filepath}`} className='video_ShowVideo'/>
+        <video src={`https://you-tube-clone-6hhgfjrnf-chiragjiwnanis-projects.vercel.app/${vid.filepath}`} className='video_ShowVideo'/>
     </Link>
     <div className="video_description">
         <div className="Chanel_logo_App">
