@@ -8,7 +8,7 @@ router.post("/post",postcomment)
 router.get('/get',getcomment)
 router.delete('/delete/:id',deletecomment)
 router.patch('/edit/:id',editcomment)
-router.patch('/like/:id', likeComment); // Correct like route
-router.patch('/dislike/:id', dislikeComment); // Correct dislike route
+router.patch('/like/:id', likeComment); 
+router.patch('/dislike/:id', dislikeComment); 
 
 export default router

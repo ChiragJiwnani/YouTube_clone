@@ -10,7 +10,7 @@ var _socket = require("socket.io");
 var socketServer = function socketServer(server) {
   var io = new _socket.Server(server, {
     cors: {
-      origin: "*",
+      origin: "http://localhost:3000",
       methods: ["GET", "POST"]
     }
   });

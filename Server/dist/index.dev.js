@@ -107,10 +107,11 @@ var PORT = process.env.PORT; // Initialize Socket.io
 
 var io = new _socket2.Server(httpServer, {
   cors: {
-    origin: "http://localhost:3000",
+    // origin: ["https://chirags-youtube-clone.netlify.app","http://localhost:3000", "https://chirags-youtube-clone.vercel.app"],// Your frontend's URL
+    origin: ["http://localhost:3000"],
     // Your frontend's URL
     methods: ["POST", "GET", "PATCH"],
-    credentials: false,
+    credentials: true,
     optionSuccessStatus: 200 // Set up the correct CORS for frontend access
 
   }
@@ -172,7 +173,8 @@ app.post("/translate", function _callee2(req, res) {
       switch (_context2.prev = _context2.next) {
         case 0:
           _req$body = req.body, src = _req$body.src, tgt = _req$body.tgt;
-          command = "curl -X POST https://youtube-clone-3ge8.onrender.com/translate -H \"Content-Type: application/json\" -d '{\"src\": \"".concat(src, "\", \"tgt\": \"").concat(tgt, "\"}'");
+          command = "curl -X POST http://localhost:5000/translate -H \"Content-Type: application/json\" -d '{\"src\": \"".concat(src, "\", \"tgt\": \"").concat(tgt, "\"}'"); // const command = `curl -X POST https://youtubeclone-server.vercel.app/translate -H "Content-Type: application/json" -d '{"src": "${src}", "tgt": "${tgt}"}'`;
+
           (0, _child_process.exec)(command, function (error, stdout) {
             if (error) {
               res.status(500).json({
