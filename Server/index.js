@@ -144,7 +144,7 @@ app.post("/api/send-mobile-otp", async (req, res) => {
 // MongoDB Connection and Server Listener
 const DB_URL = process.env.DB_URL;
 mongoose
-  .connect(DB_URL, , {
+  .connect(DB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   serverSelectionTimeoutMS: 5000, // Timeout if the database is unreachable
