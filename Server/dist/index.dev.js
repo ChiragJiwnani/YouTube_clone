@@ -217,7 +217,11 @@ app.post("/api/send-mobile-otp", function _callee4(req, res) {
 
 var DB_URL = process.env.DB_URL;
 
-_mongoose["default"].connect(DB_URL).then(function () {
+_mongoose["default"].connect(DB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true // serverSelectionTimeoutMS: 5000, // Timeout if the database is unreachable
+
+}).then(function () {
   console.log("Mongodb Database connected");
 })["catch"](function (error) {
   console.log(error);

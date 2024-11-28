@@ -10,10 +10,10 @@ var _axios = _interopRequireDefault(require("axios"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 // const API=axios.create({baseURL:`https://youtube-clone-3ge8.onrender.com`})
-// const API=axios.create({baseURL:`http://localhost:5000`})
 var API = _axios["default"].create({
-  baseURL: "https://youtubeclone-server.vercel.app"
-});
+  baseURL: "http://localhost:5000"
+}); // const API=axios.create({baseURL:`https://youtubeclone-server.vercel.app`})
+
 
 API.interceptors.request.use(function (req) {
   if (localStorage.getItem("Profile")) {
