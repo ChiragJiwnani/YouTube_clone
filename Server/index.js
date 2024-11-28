@@ -57,8 +57,8 @@ const server = createServer(app);
 socketServer(server);
 
 app.use(cors());
-app.use(express.json({ limit: "30mb", extended: true }));
-app.use(express.urlencoded({ limit: "30mb", extended: true }));
+app.use(express.json({ limit: "100mb", extended: true }));
+app.use(express.urlencoded({ limit: "100mb", extended: true }));
 app.use("/uploads", express.static(path.join("uploads")));
 
 app.get("/", (req, res) => {
@@ -78,12 +78,19 @@ const PORT = process.env.PORT;
 // Initialize Socket.io
 const io = new Server(httpServer, {
   cors: {
+<<<<<<< HEAD
     // origin: ["https://chirags-youtube-clone.netlify.app","http://localhost:3000", "https://chirags-youtube-clone.vercel.app"],// Your frontend's URL
     origin: ["http://localhost:3000"],// Your frontend's URL
+=======
+    origin: ["http://localhost:3000", "https://chirags-youtube-clone.vercel.app"],
+    //origin: "*",
+    //origin: "https://chirags-youtube-clone.vercel.app", 
+>>>>>>> 36e2da87f10d0bbe1e5b52db7f85213a62989758
     methods: ["POST", "GET", "PATCH"],
     credentials: true,
     optionSuccessStatus: 200, // Set up the correct CORS for frontend access
   },
+  transports: [ "polling"]
 });
 
 // Socket.io chat logic
@@ -121,8 +128,12 @@ io.on("connection", (socket) => {
 // Proxy translation request to OpenNMT server
 app.post("/translate", async (req, res) => {
   const { src, tgt } = req.body;
+<<<<<<< HEAD
   const command = `curl -X POST http://localhost:5000/translate -H "Content-Type: application/json" -d '{"src": "${src}", "tgt": "${tgt}"}'`;
   // const command = `curl -X POST https://youtubeclone-server.vercel.app/translate -H "Content-Type: application/json" -d '{"src": "${src}", "tgt": "${tgt}"}'`;
+=======
+  const command = `curl -X POST https://chirags-youtube-clone.vercel.app/translate -H "Content-Type: application/json" -d '{"src": "${src}", "tgt": "${tgt}"}'`;
+>>>>>>> 36e2da87f10d0bbe1e5b52db7f85213a62989758
 
   exec(command, (error, stdout) => {
     if (error) {
