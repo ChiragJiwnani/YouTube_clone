@@ -79,7 +79,8 @@ const PORT = process.env.PORT;
 const io = new Server(httpServer, {
   cors: {
     //origin: ["http://localhost:3000", "https://chirags-youtube-clone.vercel.app"],
-    origin: "*",
+    //origin: "*",
+    origin: "https://youtubeclone-client.vercel.app",
     methods: ["POST", "GET", "PATCH"],
     credentials: true,
     optionSuccessStatus: 200, // Set up the correct CORS for frontend access
