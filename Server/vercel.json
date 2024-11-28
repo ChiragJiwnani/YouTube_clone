@@ -10,23 +10,7 @@
       {
         "src": "/(.*)",
         "dest": "index.js"
-      },
-      // {
-      //   "src": "/Routes",
-      //   "dest": "chat.js"
-      // },
-      // {
-      //   "src": "/Routes",
-      //   "dest": "comment.js"
-      // },
-      // {
-      //   "src": "/Routes",
-      //   "dest": "User.js"
-      // }
-      // {
-      //   "src": "/Routes",
-      //   "dest": "video.js"
-      // }
+      }
     ]
   }
   
