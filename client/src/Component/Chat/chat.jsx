@@ -7,7 +7,7 @@ import CryptoJS from "crypto-js";
 import "./chat.css";
 
 const socket = io("https://youtubeclone-server.vercel.app",{
-  transports: ["websocket", "polling"]
+  transports: ["polling"]
 });
 
 const Chat = ({ roomId, userId, userName }) => {
