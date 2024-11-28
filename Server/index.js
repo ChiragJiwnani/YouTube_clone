@@ -81,9 +81,10 @@ const io = new Server(httpServer, {
     //origin: ["http://localhost:3000", "https://chirags-youtube-clone.vercel.app"],
     origin: "*",
     methods: ["POST", "GET", "PATCH"],
-    credentials: false,
+    credentials: true,
     optionSuccessStatus: 200, // Set up the correct CORS for frontend access
   },
+  transports: ["websocket", "polling"]
 });
 
 // Socket.io chat logic
