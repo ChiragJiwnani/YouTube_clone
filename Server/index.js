@@ -80,7 +80,7 @@ const io = new Server(httpServer, {
   cors: {
     origin: ["https://chirags-youtube-clone.netlify.app","http://localhost:3000", "https://chirags-youtube-clone.vercel.app"],
     methods: ["POST", "GET", "PATCH"],
-    credentials: false,
+    credentials: true,
     optionSuccessStatus: 200, // Set up the correct CORS for frontend access
   },
 });
