@@ -37,7 +37,7 @@ const VideoCall = () => {
     });
 
   useEffect(() => {
-    /socket.current = io.connect("https://youtubeclone-server.vercel.app/");
+    socket.current = io.connect("https://youtubeclone-server.vercel.app/");
     // socket.current = io.connect("https://youtubeclone-server-vwng.onrender.com/");
     // socket.current = io.connect("http://localhost:5000/");
     console.log("Use Effect running");
