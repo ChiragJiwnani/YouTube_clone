@@ -78,7 +78,7 @@ const PORT = process.env.PORT;
 // Initialize Socket.io
 const io = new Server(httpServer, {
   cors: {
-    origin: ["https://chirags-youtube-clone.vercel.app"],// Your frontend's URL
+    origin: ["*"],// Your frontend's URL
     // origin: ["http://localhost:3000"],// Your frontend's URL
     methods: ["POST", "GET", "PATCH"],
     credentials: true,

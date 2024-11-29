@@ -117,7 +117,7 @@ const Home = () => {
             </div>
           </div>
         ) : (
-          <Chat roomId={roomId} userId={userId} userName="User123" />
+          <Chat roomId={roomId} userId={userId} userName="UserName" />
         )}
       </div>
     </div>

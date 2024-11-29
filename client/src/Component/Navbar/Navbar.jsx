@@ -21,7 +21,7 @@ const Navbar = ({ toggledrawer, seteditcreatechanelbtn }) => {
   const dispatch = useDispatch();
 
   const currentuser = useSelector((state) => state.currentuserreducer);
-  // console.log(currentuser)
+  console.log(currentuser)
   const successlogin = () => {
     if (profile.email) {
       dispatch(login({ email: profile.email }));
