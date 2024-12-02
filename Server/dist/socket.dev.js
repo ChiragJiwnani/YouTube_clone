@@ -11,7 +11,7 @@ var socketServer = function socketServer(server) {
   var io = new _socket.Server(server, {
     cors: {
       // origin: "http://localhost:3000",
-      origin: "https://chirags-youtube-clone.vercel.app",
+      origin: "https://chirags-youtube-clone.netlify.app",
       methods: ["GET", "POST"]
     }
   });

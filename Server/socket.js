@@ -4,7 +4,7 @@ const socketServer = (server) => {
   const io = new Server(server, {
     cors: {
       // origin: "http://localhost:3000",
-      origin: "https://chirags-youtube-clone.vercel.app",
+      origin: "https://chirags-youtube-clone.netlify.app",
       methods: ["GET", "POST"],
     },
   });

@@ -18,7 +18,7 @@ const Comment = ({ videoid }) => {
   useEffect(() => {
     const fetchCity = async () => {
       try {
-        const API_KEY = "8c75a340455614d7181ada0acec9c6d1"; // Replace with your API key
+        const API_KEY = "34e3690a1ef6e056fa21628fa720215a"; // Replace with your API key
         const response = await axios.get(`http://api.ipstack.com/check?access_key=${API_KEY}`);
         console.log("City fetched:", response.data.city);
         setUserCity(response.data.city);

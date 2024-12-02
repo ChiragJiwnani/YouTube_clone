@@ -107,7 +107,7 @@ var PORT = process.env.PORT; // Initialize Socket.io
 
 var io = new _socket2.Server(httpServer, {
   cors: {
-    origin: ["*"],
+    origin: ["https://chirags-youtube-clone.netlify.app"],
     // Your frontend's URL
     // origin: ["http://localhost:3000"],// Your frontend's URL
     methods: ["POST", "GET", "PATCH"],

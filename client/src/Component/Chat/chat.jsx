@@ -8,7 +8,7 @@ import "./chat.css";
 
 const socket = io("https://youtubeclone-server-vwng.onrender.com");
 //  const socket = io("https://youtubeclone-server.vercel.app");
-//const socket = io("http://localhost:5000");
+// const socket = io("http://localhost:5000");
 
 const Chat = ({ roomId, userId, userName }) => {
   const dispatch = useDispatch();
