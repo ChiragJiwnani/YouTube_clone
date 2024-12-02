@@ -58,7 +58,7 @@ socketServer(server);
 
 app.use(cors({
     origin: ["https://chirags-youtube-clone.netlify.app", "http://localhost:3000"], // Allow requests from this origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     allowedHeaders: ['Content-Type', 'Authorization'],// Specify allowed HTTP methods
     credentials: true // Include credentials if needed
 }));
