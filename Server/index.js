@@ -56,7 +56,12 @@ const app = express();
 const server = createServer(app);
 socketServer(server);
 
-app.use(cors());
+app.use(cors({
+    origin: ["https://chirags-youtube-clone.netlify.app", "http://localhost:3000"], // Allow requests from this origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    allowedHeaders: ['Content-Type', 'Authorization'],// Specify allowed HTTP methods
+    credentials: true // Include credentials if needed
+}));
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use("/uploads", express.static(path.join("uploads")));
@@ -78,11 +83,11 @@ const PORT = process.env.PORT;
 // Initialize Socket.io
 const io = new Server(httpServer, {
   cors: {
-    origin: ["https://chirags-youtube-clone.netlify.app"],// Your frontend's URL
+    origin: ["https://chirags-youtube-clone.netlify.app", "http://localhost:3000"],// Your frontend's URL
     // origin: ["http://localhost:3000"],// Your frontend's URL
     methods: ["POST", "GET", "PATCH"],
     credentials: true,
-    optionSuccessStatus: 200, // Set up the correct CORS for frontend access
+    optionSuccessStatus: 200,// Set up the correct CORS for frontend access
   },
 });
 

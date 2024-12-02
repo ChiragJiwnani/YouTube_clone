@@ -83,7 +83,15 @@ _dotenv["default"].config({
 var app = (0, _express["default"])();
 var server = (0, _http.createServer)(app);
 (0, _socket["default"])(server);
-app.use((0, _cors["default"])());
+app.use((0, _cors["default"])({
+  origin: ["https://chirags-youtube-clone.netlify.app", "http://localhost:3000"],
+  // Allow requests from this origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  // Specify allowed HTTP methods
+  credentials: true // Include credentials if needed
+
+}));
 app.use(_express["default"].json({
   limit: "30mb",
   extended: true
@@ -107,7 +115,7 @@ var PORT = process.env.PORT; // Initialize Socket.io
 
 var io = new _socket2.Server(httpServer, {
   cors: {
-    origin: ["https://chirags-youtube-clone.netlify.app"],
+    origin: ["https://chirags-youtube-clone.netlify.app", "http://localhost:3000"],
     // Your frontend's URL
     // origin: ["http://localhost:3000"],// Your frontend's URL
     methods: ["POST", "GET", "PATCH"],
